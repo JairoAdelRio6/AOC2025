@@ -1,6 +1,5 @@
 local ranges = {}
 local ids = {}
--- local id_hashes = {}
 
 local n_of_fresh = 0
 local n_of_fresh_total = 0
@@ -23,18 +22,6 @@ end
 table.sort(ranges, function(a, b)
 	return a[1] < b[1]
 end)
-
--- for _, id in ipairs(ids) do
--- 	for _, range in ipairs(ranges) do
--- 		local start, stop = range[1], range[2]
--- 		if start <= id and id <= stop then
--- 			if not id_hashes[id] then
--- 				n_of_fresh = n_of_fresh + 1
--- 				id_hashes[id] = true
--- 			end
--- 		end
--- 	end
--- end
 
 for i = 1, #ranges - 1 do
 	for j = i + 1, #ranges do
